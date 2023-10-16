@@ -3,12 +3,12 @@ import { Page } from "@playwright/test";
 export class AddRemoveElementsPage {
   constructor(private page: Page) {}
 
-  pageTitle = this.page.locator("//h3");
+  pageHeader = this.page.locator("//h3");
   addElement = this.page.getByText("Add Element");
   deleteElement = this.page.getByText("Delete");
 
   async getHeaderText(): Promise<String> {
-    return await this.pageTitle.innerText();
+    return await this.pageHeader.innerText();
   }
 
   async addElements(newElements: number) {
