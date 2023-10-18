@@ -11,12 +11,12 @@ test("example 1", async ({ page }) => {
   const dynamicLoading = new DynamicLoading(page);
   await dynamicLoading.clickExample("1");
   await dynamicLoading.clickStart();
-  await expect(await dynamicLoading.verifyFinalText()).toBe("Hello World!");
+  expect(await dynamicLoading.verifyFinalText()).toBe("Hello World!");
 });
 
 test("example 2", async ({ page }) => {
   const dynamicLoading = new DynamicLoading(page);
   await dynamicLoading.clickExample('2');
   await dynamicLoading.clickStart();
-  await expect(await dynamicLoading.verifyFinalText()).toBe("Hello World!");
+  expect(await dynamicLoading.verifyFinalText()).toBe("Hello World!");
 });

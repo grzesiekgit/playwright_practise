@@ -8,9 +8,9 @@ test("dropdown tests", async ({ page }) => {
   await welcomePage.openPage("Dropdown");
 
   const dropdown = new Dropdown(page);
-  await expect(await dropdown.getDropdownValue()).toEqual("Please select an option");
+  expect(await dropdown.getDropdownValue()).toEqual("Please select an option");
   await dropdown.selectOption1();
-  await expect(await dropdown.getDropdownValue()).toEqual("Option 1");
+  expect(await dropdown.getDropdownValue()).toEqual("Option 1");
   await dropdown.selectOption2();
-  await expect(await dropdown.getDropdownValue()).toEqual("Option 2");
+  expect(await dropdown.getDropdownValue()).toEqual("Option 2");
 });

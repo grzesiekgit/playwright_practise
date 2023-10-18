@@ -21,4 +21,5 @@ test("dynamic text input", async ({ page }) => {
   await expect(dynamicControls.inputFiled).not.toBeEnabled();
   await dynamicControls.enableTextInput();
   await dynamicControls.fillTextInput("bla bla bla");
+  await expect(dynamicControls.inputFiled).toBeEnabled();
 });

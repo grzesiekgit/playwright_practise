@@ -16,7 +16,7 @@ test("verify basic auth page header verison 1", async ({ browser }) => {
   await welcomePage.openPage("Basic Auth");
   const basicAuthPage = new BasicAuth(newPage);
 
-  await expect(await basicAuthPage.getHeaderText()).toEqual("Basic Auth");
+  expect(await basicAuthPage.getHeaderText()).toEqual("Basic Auth");
 });
 
 test("verify basic auth page header verison 2", async ({ page }) => {
@@ -31,6 +31,5 @@ test("verify basic auth page header verison 2", async ({ page }) => {
     `http://${httpCredentials.username}:${httpCredentials.password}@the-internet.herokuapp.com/basic_auth`
   );
   const basicAuthPage = new BasicAuth(page);
-
-  await expect(await basicAuthPage.getHeaderText()).toEqual("Basic Auth");
+  expect(await basicAuthPage.getHeaderText()).toEqual("Basic Auth");
 });

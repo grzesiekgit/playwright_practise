@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("verify page header", async () => {
-  await expect(await addRemoveElementsPage.getHeaderText()).toEqual(
+  expect(await addRemoveElementsPage.getHeaderText()).toEqual(
     "Add/Remove Elements"
   );
 });
@@ -21,15 +21,13 @@ test("verify page header", async () => {
 test("adding elements", async () => {
   const newElements: number = 10;
   await addRemoveElementsPage.addElements(newElements);
-  await expect(await addRemoveElementsPage.getNumberOfElements()).toBe(
-    newElements
-  );
+  expect(await addRemoveElementsPage.getNumberOfElements()).toBe(newElements);
 });
 
 test("delete all added elements", async () => {
   await addRemoveElementsPage.addElements(15);
   await addRemoveElementsPage.deleteAllElements();
-  await expect(await addRemoveElementsPage.getNumberOfElements()).toBe(0);
+  expect(await addRemoveElementsPage.getNumberOfElements()).toBe(0);
 });
 
 test("delete a few elements", async () => {
@@ -37,7 +35,7 @@ test("delete a few elements", async () => {
   const elemnentToDelete: number = 5;
   await addRemoveElementsPage.addElements(newElements);
   await addRemoveElementsPage.deleteNthElement(elemnentToDelete);
-  await expect(await addRemoveElementsPage.getNumberOfElements()).toBe(
+  expect(await addRemoveElementsPage.getNumberOfElements()).toBe(
     newElements - 1
   );
 });
