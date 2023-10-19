@@ -6,8 +6,8 @@ import { IFrame } from "../pages/frames_iframe.page";
 
 test.beforeEach("frames page test", async ({ page }) => {
   const welcomePage = new WelcomePage(page);
-  welcomePage.openWelcomePage();
-  welcomePage.openPage("Frames");
+  await welcomePage.openWelcomePage();
+  await welcomePage.openPage("Frames");
 });
 test("nested frames test", async ({ page }) => {
   const frames = new Frames(page);
