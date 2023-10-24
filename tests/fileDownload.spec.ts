@@ -13,7 +13,7 @@ test("download file second way", async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/download');
   
     const fileDownload = new FileDownload(page);
-    await fileDownload.downloadFile2("code.txt");
+    await fileDownload.downloadFile2("test.txt");
   });
   
 

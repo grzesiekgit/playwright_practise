@@ -18,7 +18,7 @@ export class FileDownload {
 
   async downloadFile2(fileName: string) {
     const downloadPromise = this.page.waitForEvent("download");
-    await this.page.getByText(`${fileName}`).click();
+    await this.page.getByText(`${fileName}`, {exact: true}).click();
     const download = await downloadPromise;
     await download.saveAs('download/' + download.suggestedFilename());
     expect(fs.existsSync('download/' + download.suggestedFilename())).toBeTruthy();

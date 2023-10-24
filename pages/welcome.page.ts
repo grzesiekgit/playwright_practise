@@ -9,6 +9,6 @@ export class WelcomePage {
     }
 
     async openPage(subPage: String){
-        await this.page.getByText(`${subPage}`).first().click();
+        await this.page.getByRole('link', {name: `${subPage}`, exact: true}).click();
     }
 }
