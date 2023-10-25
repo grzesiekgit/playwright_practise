@@ -3,3 +3,4 @@ node_modules/
 /playwright-report/
 /playwright/.cache/
 download/code.txt
+download/test.txt
