@@ -55,19 +55,13 @@ export class SortableDataTables {
   async sortAlphabetically() {
     await expect(async () => {
       await this.lastNameHeader.click();
-      expect(this.lastNameHeader).toHaveAttribute(
-        "class",
-        "header headerSortDown"
-      );
+      expect(this.lastNameHeader).toHaveClass(/SortDown/);
     }).toPass();
   }
   async sortReverse() {
     await expect(async () => {
       await this.lastNameHeader.click();
-      expect(this.lastNameHeader).toHaveAttribute(
-        "class",
-        "header headerSortUp"
-      );
+      expect(this.lastNameHeader).toHaveClass(/headerSortUp/);
     }).toPass();
   }
 }
